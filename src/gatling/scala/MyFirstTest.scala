@@ -15,6 +15,4 @@ class MyFirstTest extends BaseSimulation {
   setUp(
     scn.inject(atOnceUsers(1))
   ).protocols(httpConf)
-
-
 }
