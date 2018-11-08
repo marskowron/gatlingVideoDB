@@ -23,9 +23,9 @@ class LoadSimulation extends BaseSimulation {
 
   val scn = scenario("Video Game DB")
     .exec(getAllVideoGames())
-    .pause(5)
+  //  .pause(5)
     .exec(getSpecificVideoGame())
-    .pause(5)
+  //  .pause(5)
     .exec(getAllVideoGames())
 
 
@@ -33,7 +33,7 @@ class LoadSimulation extends BaseSimulation {
     scn.inject(
       nothingFor(5 seconds), // do nothing for 5 seconds
       atOnceUsers(5), // inject 5 users at once
-      rampUsers(10) over (5 seconds) // inject 10 users over a period of 5 seconds
+      rampUsers(100) over (10 seconds) // inject 10 users over a period of 5 seconds
     ).protocols(httpConf.inferHtmlResources()) // inferHtmlResources will fetch everything on the page (JS, CSS, images etc.)
   )
 
